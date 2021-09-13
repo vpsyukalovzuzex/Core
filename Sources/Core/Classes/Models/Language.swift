@@ -12,21 +12,21 @@ public class Language: Object {
         
         // MARK: - Public let
         
-        static let translation            = Modes(rawValue: 1 << 0)
-        static let speechSynthesis        = Modes(rawValue: 1 << 1)
-        static let imageRecognition       = Modes(rawValue: 1 << 2)
-        static let imageObjectRecognition = Modes(rawValue: 1 << 3)
-        // static let parseWebPage           = Modes(rawValue: 1 << 4)
-        // static let parseVoice             = Modes(rawValue: 1 << 5)
-        // static let produceVoice           = Modes(rawValue: 1 << 6)
-        // static let offlineTranslate       = Modes(rawValue: 1 << 7)
-        static let phraseBook             = Modes(rawValue: 1 << 8)
-        // static let wordNetDictionary      = Modes(rawValue: 1 << 9)
-        static let translateWebSite       = Modes(rawValue: 1 << 10)
-        static let translateDocument      = Modes(rawValue: 1 << 11)
-        static let speechRecognition      = Modes(rawValue: 1 << 12)
+        public static let translation            = Modes(rawValue: 1 << 0)
+        public static let speechSynthesis        = Modes(rawValue: 1 << 1)
+        public static let imageRecognition       = Modes(rawValue: 1 << 2)
+        public static let imageObjectRecognition = Modes(rawValue: 1 << 3)
+        // public static let parseWebPage           = Modes(rawValue: 1 << 4)
+        // public static let parseVoice             = Modes(rawValue: 1 << 5)
+        // public static let produceVoice           = Modes(rawValue: 1 << 6)
+        // public static let offlineTranslate       = Modes(rawValue: 1 << 7)
+        public static let phraseBook             = Modes(rawValue: 1 << 8)
+        // public static let wordNetDictionary      = Modes(rawValue: 1 << 9)
+        public static let translateWebSite       = Modes(rawValue: 1 << 10)
+        public static let translateDocument      = Modes(rawValue: 1 << 11)
+        public static let speechRecognition      = Modes(rawValue: 1 << 12)
         
-        static let all: Modes = [
+        public static let all: Modes = [
             .translation,
             .speechSynthesis,
             .imageRecognition,
