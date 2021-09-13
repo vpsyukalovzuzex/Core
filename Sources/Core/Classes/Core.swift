@@ -45,11 +45,9 @@ public class Core {
                     resultTransliteration: response.targetTransliteration,
                     sourceTransliteration: response.sourceTransliteration
                 )
-                main {
-                    let realm = try! Realm()
-                    try! realm.safeWrite {
-                        realm.add(translation)
-                    }
+                let realm = try! Realm()
+                try! realm.safeWrite {
+                    realm.add(translation)
                 }
                 seal.fulfill(translation)
             }.catch { error in
