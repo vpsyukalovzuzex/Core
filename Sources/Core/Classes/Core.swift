@@ -7,31 +7,15 @@ import Api
 import PromiseKit
 import RealmSwift
 
-let queue = DispatchQueue(label: "com.nordicwise.core.queue.async", qos: .default, attributes: .concurrent)
-
-func main(_ block: @escaping () -> Void) {
-    DispatchQueue.main.async {
-        block()
-    }
-}
-
-func async(_ block: @escaping () -> Void) {
-    queue.async {
-        block()
-    }
-}
-
 public class Core {
     
     public static func setupLanguages() -> Promise<Void> {
         return Promise { seal in
             Api.getLanguages().done { response in
                 let languages = response.result.map { $0.language }
-                main {
-                    let realm = try! Realm()
-                    try! realm.safeWrite {
-                        realm.add(languages)
-                    }
+                let realm = try! Realm()
+                try! realm.safeWrite {
+                    realm.add(languages)
                 }
             }.catch { error in
                 // TODO: Create from local file.
